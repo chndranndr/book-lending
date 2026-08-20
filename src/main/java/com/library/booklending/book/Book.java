@@ -1,5 +1,6 @@
 package com.library.booklending.book;
 
+import lombok.Getter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "book")
+@Getter
 public class Book {
 
     @Id
@@ -39,30 +41,6 @@ public class Book {
         this.isbn = isbn;
         this.totalCopies = totalCopies;
         this.availableCopies = availableCopies;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public int getTotalCopies() {
-        return totalCopies;
-    }
-
-    public int getAvailableCopies() {
-        return availableCopies;
     }
 
     public void update(String title, String author, String isbn, int totalCopies, int availableCopies) {

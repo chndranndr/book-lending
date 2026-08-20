@@ -1,5 +1,6 @@
 package com.library.booklending.loan;
 
+import lombok.Getter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "loan")
+@Getter
 public class Loan {
 
     @Id
@@ -39,30 +41,6 @@ public class Loan {
         this.memberId = memberId;
         this.borrowedAt = borrowedAt;
         this.dueDate = dueDate;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getBookId() {
-        return bookId;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public Instant getBorrowedAt() {
-        return borrowedAt;
-    }
-
-    public Instant getDueDate() {
-        return dueDate;
-    }
-
-    public Instant getReturnedAt() {
-        return returnedAt;
     }
 
     public boolean isReturned() {

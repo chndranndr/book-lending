@@ -1,5 +1,6 @@
 package com.library.booklending.member;
 
+import lombok.Getter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "member")
+@Getter
 public class Member {
 
     @Id
@@ -27,18 +29,6 @@ public class Member {
     public Member(String name, String email) {
         this.name = name;
         this.email = email;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void update(String name, String email) {
