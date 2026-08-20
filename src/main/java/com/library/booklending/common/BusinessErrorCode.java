@@ -1,0 +1,14 @@
+package com.library.booklending.common;
+
+public enum BusinessErrorCode {
+    BOOK_NOT_FOUND,
+    MEMBER_NOT_FOUND,
+    LOAN_NOT_FOUND,
+    BOOK_UNAVAILABLE,
+    MAX_ACTIVE_LOANS_EXCEEDED,
+    OVERDUE_LOAN,
+    INVALID_TOTAL_COPIES,
+    ISBN_ALREADY_EXISTS,
+    EMAIL_ALREADY_EXISTS,
+    RESOURCE_IN_USE
+}

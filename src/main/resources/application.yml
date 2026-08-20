@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: book-lending
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:sqlite:./data/library.db}
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      connection-init-sql: PRAGMA foreign_keys=ON
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+  sql:
+    init:
+      mode: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+library:
+  borrowing:
+    max-active-loans: 3
+    loan-duration-days: 14
