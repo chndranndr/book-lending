@@ -5,6 +5,8 @@ services:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:sqlite:/data/library.db
+      LIBRARY_BORROWING_MAX_ACTIVE_LOANS: ${LIBRARY_BORROWING_MAX_ACTIVE_LOANS:-3}
+      LIBRARY_BORROWING_LOAN_DURATION_DAYS: ${LIBRARY_BORROWING_LOAN_DURATION_DAYS:-14}
     volumes:
       - library-data:/data
 
